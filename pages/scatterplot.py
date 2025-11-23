@@ -129,6 +129,24 @@ if df_selection.empty:
     st.warning("No data for the selected filters.")
     st.stop()
 
+# ---- Trendline option ----
+trend_option = st.sidebar.selectbox(
+    "Add trendline:",
+    options=[
+        "None",
+        "Linear (OLS)",
+        "LOWESS (Smooth)",
+    ],
+    index=0
+)
+
+trendline_map = {
+    "None": None,
+    "Linear (OLS)": "ols",
+    "LOWESS (Smooth)": "lowess",
+}
+trendline_setting = trendline_map[trend_option]
+
 # ---- Axis scales ----
 xscale = st.sidebar.radio(
     "X-axis scale:",
@@ -150,6 +168,7 @@ fig = px.scatter(
     color="region",
     size="pop" if "pop" in df_selection.columns else None,
     hover_name="country",
+    trendline=trendline_setting,
     size_max=40,
 )
 
