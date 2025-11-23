@@ -150,7 +150,7 @@ fig = px.scatter(
     color="region",
     size="pop" if "pop" in df_selection.columns else None,
     hover_name="country",
-    #size_max=60,
+    size_max=40,
 )
 
 fig.update_layout(
@@ -166,6 +166,8 @@ fig.update_layout(
     xaxis_title=label_x,
     yaxis_title=label_y,
     legend=dict(title='',
+                bgcolor="rgba(0,0,0,0)",
+                bordercolor="rgba(0,0,0,0)",
                 orientation='h',   # horizontal
                 x=0.5,             # centered horizontally
                 xanchor='center',  # anchor to center

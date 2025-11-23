@@ -103,7 +103,10 @@ fig.update_layout(
     },
     xaxis_title=" ",
     yaxis_title=label_var,
-    legend=dict(title='',
+    legend=dict(
+                bgcolor="rgba(0,0,0,0)",
+                bordercolor="rgba(0,0,0,0)",
+                title='',
                 orientation='h',   # horizontal
                 x=0.5,             # centered horizontally
                 xanchor='center',  # anchor to center

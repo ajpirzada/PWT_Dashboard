@@ -127,6 +127,8 @@ fig.update_layout(
     xaxis_title=label_x,
     yaxis_title=label_y,
     legend=dict(title='',
+                bgcolor="rgba(0,0,0,0)",
+                bordercolor="rgba(0,0,0,0)",
                 orientation='h',   # horizontal
                 x=0.5,             # centered horizontally
                 xanchor='center',  # anchor to center
@@ -136,7 +138,7 @@ fig.update_layout(
     yaxis_type="log" if yscale == "Log" else "linear",
 )
 
-fig.update_traces(textposition="bottom right") #, textfont_size=9)
+fig.update_traces(textposition="bottom right", textfont_size=6)
 
 fig.add_annotation(
     text="SOURCE: Penn World Table, Version 11",
