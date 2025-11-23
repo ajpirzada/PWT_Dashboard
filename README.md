@@ -16,12 +16,6 @@ This tool is intended primarily for **education and exploratory data analysis**,
 
 ---
 
-The Penn World Table version 11 is originally hosted by the **University of Groningen** and can be found [here] [(https://www.rug.nl/ggdc/productivity/pwt/)](). For more information on the dataset, please refer to the following paper:
-
-* Feenstra, Robert C., Robert Inklaar and Marcel P. Timmer (2015), "The Next Generation of the Penn World Table" American Economic Review, 105(10), 3150-3182.
-
----
-
 ## 📊 Key Features
 
 - Multi-page Streamlit interface with structured navigation
@@ -50,3 +44,8 @@ README.md
 .gitignore
 requirements.txt
 ```
+---
+
+The Penn World Table version 11 is originally hosted by the **University of Groningen** and can be found [here](https://www.rug.nl/ggdc/productivity/pwt/). For more information on the dataset, please refer to the following paper:
+
+* Feenstra, Robert C., Robert Inklaar and Marcel P. Timmer (2015), "The Next Generation of the Penn World Table" American Economic Review, 105(10), 3150-3182.
