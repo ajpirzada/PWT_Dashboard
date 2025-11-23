@@ -38,6 +38,5 @@ pages/
     scatterplot_mod.py
     connectedscatter_mod.py
     customvariable.py
-assets/
 gdppaneldata.xlsx
 ```
