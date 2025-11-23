@@ -122,7 +122,7 @@ fig.update_layout(
         'x': 0.5,
         'xanchor': 'center',
         'yanchor': 'top',
-        'font': dict(size=28),
+        #'font': dict(size=28),
     },
     xaxis_title=label_x,
     yaxis_title=label_y,
@@ -136,18 +136,18 @@ fig.update_layout(
     yaxis_type="log" if yscale == "Log" else "linear",
 )
 
-fig.update_traces(textposition="bottom right", textfont_size=9)
+fig.update_traces(textposition="bottom right") #, textfont_size=9)
 
 fig.add_annotation(
     text="SOURCE: Penn World Table, Version 11",
     xref="paper", yref="paper",
     x=0, y=-0.3,
     showarrow=False,
-    font=dict(size=12),
+    #font=dict(size=12),
 )
 
 # Show the Plot
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig) #, use_container_width=True)
 
 
 # --- Download filtered data as CSV ---

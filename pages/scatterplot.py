@@ -150,7 +150,7 @@ fig = px.scatter(
     color="region",
     size="pop" if "pop" in df_selection.columns else None,
     hover_name="country",
-    size_max=60,
+    #size_max=60,
 )
 
 fig.update_layout(
@@ -161,7 +161,7 @@ fig.update_layout(
         "x": 0.55,
         "xanchor": "center",
         "yanchor": "top",
-        "font": {"size": 28},
+        #"font": {"size": 28},
     },
     xaxis_title=label_x,
     yaxis_title=label_y,
@@ -186,11 +186,11 @@ fig.add_annotation(
     x=0,
     y=-0.3,
     showarrow=False,
-    font=dict(size=12),
+    #font=dict(size=12),
 )
 
 # Show the plot
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig) #, use_container_width=True)
 
 
 # --- Download filtered data as CSV ---

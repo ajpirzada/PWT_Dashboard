@@ -99,7 +99,7 @@ fig.update_layout(
         'x': 0.5,
         'xanchor': 'center',
         'yanchor': 'top',
-        'font': dict(size=28)
+        #'font': dict(size=28)
     },
     xaxis_title=" ",
     yaxis_title=label_var,
@@ -120,11 +120,11 @@ fig.add_annotation(
     xref="paper", yref="paper",
     x=0, y=-0.3,
     showarrow=False,
-    font=dict(size=12)
+    #font=dict(size=12)
 )
 
 # Show the plot
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig) #, use_container_width=True)
 
 
 # --- Download filtered data as CSV ---
