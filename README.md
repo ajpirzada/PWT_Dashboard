@@ -1,23 +1,30 @@
-`# PWT Data Viewer
+# Penn World Table (PWT) Data Viewer
 
-This project is an interactive Streamlit application for exploring the Penn World Table (PWT) dataset.  
-It allows users to visualise macroeconomic indicators across countries and over time using:
+This project is an interactive **Streamlit** application designed to help users explore the **Penn World Table (PWT) Version 11** dataset. 
 
-- **Line plots**
-- **Scatter plots**
-- **Connected scatter plots**
-- **Country, region, and year filters**
-- **Log/linear axis choices**
-- **Custom user-created variables**
+It enables students, researchers, and general users to visualise macroeconomic indicators across countries and over time—without writing any code. Users can also create their own custom variables based on existing ones in the dataset, allowing for better analysis.
 
-The tool is designed for teaching, learning, and general exploration of macroeconomic data.
+The app provides an intuitive interface for generating:
+
+- **Line plots** to track variables over time
+- **Scatter plots** to examine relationships between two indicators
+- **Connected scatter plots** to visualise how two variables evolve jointly
+- **Custom computed variables** created directly within the app
+- **Flexible filtering** by country, region, year, and axis scale (linear/log)
+
+This tool is intended primarily for **education and exploratory data analysis**, giving users a friendly way to engage with international macroeconomic data.
 
 ---
 
-## 🚀 How to Run the App
+## 📊 Key Features
 
-1. Install required packages:
+- Multi-page Streamlit interface with structured navigation
+- Automatic loading of variable **labels** from a dedicated sheet
+- User-generated variables with add/remove functionality
+- Clean Plotly visualisations with hover details
+- Filters for countries, regions, years, and axis scales
+- Integrated “About this Project” section inside the app
 
-```bash
-pip install -r requirements.txt
-`
+---
+
+## 📁 Project Structure
