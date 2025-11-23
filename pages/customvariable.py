@@ -51,12 +51,12 @@ st.write("### Create a custom variable")
 with st.expander("Examples of formulas you can use"):
     st.markdown("""
     **Basic arithmetic**
-    - gdp_pc = `rgdpo / pop`
-    - lab_prod = `rgdpo / emp`
-    - participation_rate = `(emp / pop) * 100`
+    - gdp_pc = `rgdpo / pop`    (GDP per capita)
+    - lab_prod = `rgdpo / emp`  (Labor productivity)
+    - participation_rate = `(emp / pop) * 100`  (Participation rate in %)
 
     **Growth rates**
-    - gdp_growth = `(rgdpna - rgdpna.shift(1)) / rgdpna.shift(1) * 100`
+    - gdp_growth = `(rgdpna - rgdpna.shift(1)) / rgdpna.shift(1) * 100` (annual growth rate in %)
 
     **Moving averages**
     - rgdpo_ma3 = `rgdpo.rolling(3).mean()`   (3-year moving average)
