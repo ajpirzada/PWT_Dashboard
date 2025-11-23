@@ -145,6 +145,7 @@ trendline_map = {
     "Linear (OLS)": "ols",
     "LOWESS (Smooth)": "lowess",
 }
+
 trendline_setting = trendline_map[trend_option]
 
 # ---- Axis scales ----
