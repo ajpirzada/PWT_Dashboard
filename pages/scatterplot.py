@@ -155,16 +155,22 @@ fig = px.scatter(
 
 fig.update_layout(
     template="plotly_white",
+    margin=dict(t=140),
     title={
         "text": f"{label_y} and {label_x}",
-        "x": 0.5,
+        "x": 0.55,
         "xanchor": "center",
         "yanchor": "top",
         "font": {"size": 28},
     },
     xaxis_title=label_x,
     yaxis_title=label_y,
-    legend=dict(title="", orientation="v"),
+    legend=dict(title='',
+                orientation='h',   # horizontal
+                x=0.5,             # centered horizontally
+                xanchor='center',  # anchor to center
+                y=1.15             # positioned just below the title
+                )
 )
 
 # Apply axis scaling
@@ -178,7 +184,7 @@ fig.add_annotation(
     xref="paper",
     yref="paper",
     x=0,
-    y=-0.25,
+    y=-0.3,
     showarrow=False,
     font=dict(size=12),
 )

@@ -116,6 +116,7 @@ fig = px.line(
 
 fig.update_layout(
     template="plotly_white",
+    margin=dict(t=140),     # extra top margin for title
     title={
         'text': f"{label_y} and {label_x}",
         'x': 0.5,
@@ -125,7 +126,12 @@ fig.update_layout(
     },
     xaxis_title=label_x,
     yaxis_title=label_y,
-    legend=dict(title='', orientation='v'),
+    legend=dict(title='',
+                orientation='h',   # horizontal
+                x=0.5,             # centered horizontally
+                xanchor='center',  # anchor to center
+                y=1.15             # positioned just below the title
+                ),
     xaxis_type="log" if xscale == "Log" else "linear",
     yaxis_type="log" if yscale == "Log" else "linear",
 )
@@ -135,7 +141,7 @@ fig.update_traces(textposition="bottom right", textfont_size=9)
 fig.add_annotation(
     text="SOURCE: Penn World Table, Version 11",
     xref="paper", yref="paper",
-    x=0, y=-0.2,
+    x=0, y=-0.3,
     showarrow=False,
     font=dict(size=12),
 )

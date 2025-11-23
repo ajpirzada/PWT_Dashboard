@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import itertools
 
 
 # --- LOAD / SHARE DATA ----
@@ -83,8 +84,16 @@ fig = px.line(
     color="country"
 )
 
+# --- Automatic dash patterns ---
+dash_cycle = itertools.cycle(["solid", "dash", "dot", "dashdot", "longdash"])
+
+for trace in fig.data:
+    trace.line.width = 4
+    trace.line.dash = next(dash_cycle)
+
 fig.update_layout(
     template="plotly_white",
+    margin=dict(t=140),
     title={
         'text': f"{label_var} over time",
         'x': 0.5,
@@ -94,7 +103,12 @@ fig.update_layout(
     },
     xaxis_title=" ",
     yaxis_title=label_var,
-    legend=dict(title='', orientation='v', x=0.02, y=1)
+    legend=dict(title='',
+                orientation='h',   # horizontal
+                x=0.5,             # centered horizontally
+                xanchor='center',  # anchor to center
+                y=1.15             # positioned just below the title
+                )
 )
 
 fig.update_layout(
@@ -104,7 +118,7 @@ fig.update_layout(
 fig.add_annotation(
     text="SOURCE: Penn World Table, Version 11",
     xref="paper", yref="paper",
-    x=0, y=-0.2,
+    x=0, y=-0.3,
     showarrow=False,
     font=dict(size=12)
 )
