@@ -46,10 +46,31 @@ st.dataframe(pd.DataFrame(rows), hide_index=True)
 
 # ---------- Create custom variable ----------
 st.write("### Create a custom variable")
-st.caption(
-    "Use existing column names, e.g. `rgdpo / pop`, `rgdpo / 1000`, "
-    "`(rgdpo / pop) * 100`."
-)
+
+# ---------- Examples of formulas ----------
+with st.expander("Examples of formulas you can use"):
+    st.markdown("""
+    **Basic arithmetic**
+    - gdp_pc = `rgdpo / pop`
+    - lab_prod = `rgdpo / emp`
+    - participation_rate = `(emp / pop) * 100`
+
+    **Growth rates**
+    - gdp_growth = `(rgdpna - rgdpna.shift(1)) / rgdpna.shift(1) * 100`
+
+    **Moving averages**
+    - rgdpo_ma3 = `rgdpo.rolling(3).mean()`   (3-year moving average)
+
+    **Lags and leads**
+    - rgdpo_lag = `rgdpo.shift(1)`   (lag 1 year)
+    - rgdpo_lead = `pop.shift(-1)`    (lead 1 year)
+
+    **Index numbers**
+    - `rgdpo / rgdpo.iloc[0] * 100`
+
+    These expressions follow pandas `.eval()` rules.
+    """)
+
 
 custom_name = st.text_input("New variable name (no spaces):", value="")
 custom_expr = st.text_input("Formula:", value="")
