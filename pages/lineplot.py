@@ -123,4 +123,20 @@ fig.add_annotation(
     font=dict(size=12)
 )
 
+# Show the plot
 st.plotly_chart(fig, use_container_width=True)
+
+
+# --- Download filtered data as CSV ---
+df_export = df_selection[["country", "year", variable]].dropna(
+    subset=[variable]
+)
+
+csv_data = df_export.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="Download Plot Data (CSV)",
+    data=csv_data,
+    file_name="pwt_line_data.csv",
+    mime="text/csv",
+)

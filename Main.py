@@ -56,6 +56,11 @@ about_page = st.Page(
     default=True
 )
 
+variableinfo_page = st.Page(
+    page="pages/variableinfo.py",
+    title="Variables Info"
+)
+
 lineplot_page = st.Page(
     page="pages/lineplot.py",
     title="Line Plot"
@@ -85,6 +90,7 @@ data_page = st.Page(
 pg = st.navigation(
     pages=[
         about_page,
+        variableinfo_page,
         lineplot_page,
         scatterplot_page,
         connectedscatterplot_page,

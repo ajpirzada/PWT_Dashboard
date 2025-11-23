@@ -146,4 +146,20 @@ fig.add_annotation(
     font=dict(size=12),
 )
 
+# Show the Plot
 st.plotly_chart(fig, use_container_width=True)
+
+
+# --- Download filtered data as CSV ---
+df_export = df_selection[["country", "year", variablex, variabley]].dropna(
+    subset=[variablex, variabley]
+)
+
+csv_data = df_export.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="Download Plot Data (CSV)",
+    data=csv_data,
+    file_name="pwt_connectedscatter_data.csv",
+    mime="text/csv",
+)
