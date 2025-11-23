@@ -28,3 +28,16 @@ This tool is intended primarily for **education and exploratory data analysis**,
 ---
 
 ## 📁 Project Structure
+
+
+```text
+Main.py
+pages/
+    about.py
+    lineplot_mod.py
+    scatterplot_mod.py
+    connectedscatter_mod.py
+    customvariable.py
+assets/
+gdppaneldata.xlsx
+```
