@@ -39,4 +39,7 @@ pages/
     connectedscatter_mod.py
     customvariable.py
 gdppaneldata.xlsx
+README.md
+.gitignore
+requirements.txt
 ```
